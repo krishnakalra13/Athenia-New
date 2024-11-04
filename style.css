@@ -1,0 +1,226 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-image: url('C:\Users\SMASH\Desktop\Website\scl1.jpg')
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional background color */
+    background-blend-mode: multiply;
+
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #1e90ff, #4169e1); /* Royal Blue to Dodger Blue gradient */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 300;
+    color: #e6f2ff;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #4169e1; /* Royal Blue */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1e90ff; /* Dodger Blue */
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+h3 {
+    font-size: 1.8em;
+    color: #4169e1; /* Royal Blue */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+button {
+    background-color: #4169e1; /* Royal Blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #1e90ff; /* Dodger Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Footer styles */
+footer {
+    background: linear-gradient(135deg, #4169e1, #1e90ff); /* Reverse of header gradient */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+     /* Style for the button-like anchor */
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding as needed */
+            background-color: white; /* Button background color */
+            color: blue; /* Text color */
+            text-decoration:none; /* Remove underline */
+            border: 1px solid #007bff; /* Add a border for button-like appearance */
+            border-radius: 10px; /* Rounded corners */
+		
+        }
+          .photo-container {
+            display: flex;
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        .photo {
+            flex: 0 0 auto;
+            margin-right: 10px;
+            transition: transform 0.3s; /* Add a smooth transition effect */
+		
+        }
+
+        .photo:hover {
+            transform: scale(1.2); /* Enlarge the photo on hover */
+            z-index: 1; /* Bring the hovered photo to the front */
+        }
+		a{width:max-content;
+		position:relative;
+		cursor:pointer;
+		margin:100px auto;
+		Margin-right:25px;
+		font-size:25px;
+		}
+		a::after{content:"";
+			position:absolute;
+			bottom:-5px;
+			height:4px;
+			width:100%;
+			left:0;
+			background-color:#000;
+			transition:0.3s;
+			transition-timing-function:ease-in-out;
+			transform:scaleX(0);
+			}
+			a:hover::after{
+			transform:scaleX(1);
+			}
+
+.image-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  gap: 10px; /* Space between images */
+}
+
+.image-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover their grid cell without distortion */
+  display: block;
+}
+
+			form{
+			font-size:32px;
+			font-family:Times New Roman;
+			align:center;}
+			input{
+			width: 300px; /* Adjust the width as needed */
+            height: 35px;/* Adjust the Length as needed */
+						font-size:32px;}
+						select{font-size:32px;}
+			h3{font-family:Arial;
+			}
+
+a {
+  margin-right: 25px;
+}
+
+a:last-of-type {
+  margin-right: 0;
+}

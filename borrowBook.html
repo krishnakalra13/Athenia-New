@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Alice Blue */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #1e90ff, #4169e1); /* Royal Blue to Dodger Blue gradient */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-family: Bernard MT Condensed;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 300;
+    color: #e6f2ff;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #4169e1; /* Royal Blue */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1e90ff; /* Dodger Blue */
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+h3 {
+    font-size: 1.8em;
+    color: #4169e1; /* Royal Blue */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+button {
+    background-color: #4169e1; /* Royal Blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #1e90ff; /* Dodger Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Footer styles */
+footer {
+    background: linear-gradient(135deg, #4169e1, #1e90ff); /* Reverse of header gradient */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+	/* Style for the button-like anchor */
+        .button-link {
+            display: inline-block;
+			    padding: 10px 20px; /* Adjust padding as needed */
+            background-color: white; /* Button background color */
+            color: blue; /* Text color */
+            text-decoration:none; /* Remove underline */
+            border: 1px solid #007bff; /* Add a border for button-like appearance */
+            border-radius: 10px; /* Rounded corners */
+		
+        }
+          .photo-container {
+            display: flex;
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        .photo {
+            flex: 0 0 auto;
+            margin-right: 10px;
+            transition: transform 0.3s; /* Add a smooth transition effect */
+		
+        }
+
+        .photo:hover {
+            transform: scale(1.2); /* Enlarge the photo on hover */
+            z-index: 1; /* Bring the hovered photo to the front */
+        }
+		a{width:max-content;
+		position:relative;
+		cursor:pointer;
+		margin:100px auto;
+		Margin-right:25px;
+		font-size:25px;
+		}
+		a::after{content:"";
+			position:absolute;
+			bottom:-5px;
+			height:4px;
+			width:100%;
+			left:0;
+			background-color:#000;
+			transition:0.3s;
+			transition-timing-function:ease-in-out;
+			transform:scaleX(0);
+			}
+			a:hover::after{
+			transform:scaleX(1);
+			}
+	</style>
+  <title>Borrow Book</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Library Management</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="addBook.html">Add Book</a></li>
+        <li class="nav-item"><a class="nav-link" href="addUser.html">Add User</a></li>
+        <li class="nav-item"><a class="nav-link" href="borrowBook.html">Borrow Book</a></li>
+        <li class="nav-item"><a class="nav-link" href="returnBook.html">Return Book</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="mt-4">
+      <h2>Borrow Book</h2>
+      <form id="borrowBookForm">
+        <div class="form-group">
+          <label for="bookIDBorrow">Book ID</label>
+          <select class="form-control" id="bookIDBorrow" name="bookIDBorrow"></select>
+        </div>
+        <div class="form-group">
+          <label for="userIDBorrow">User ID</label>
+          <select class="form-control" id="userIDBorrow" name="userIDBorrow"></select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="borrowBook()">Borrow Book</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const apiUrl = 'https://script.google.com/macros/s/AKfycbyx8J6aRZS_3PpfYlfGeXk9tpK-yXyeNtQajwLuvCq-0wq8lfr3eKkR49avdZVE2FQLqw/exec';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      fetchBooks();
+      fetchUsers();
+    });
+
+    function fetchBooks() {
+      fetch(`${apiUrl}?action=listBooks`, { method: 'GET' })
+        .then(response => response.json())
+        .then(data => {
+          const bookSelect = document.getElementById('bookIDBorrow');
+          data.forEach(book => {
+            const option = document.createElement('option');
+            option.value = book.bookID;
+            option.textContent = `${book.title} (${book.bookID})`;
+            bookSelect.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function fetchUsers() {
+      fetch(`${apiUrl}?action=listUsers`, { method: 'GET' })
+        .then(response => response.json())
+        .then(data => {
+          const userSelect = document.getElementById('userIDBorrow');
+          data.forEach(user => {
+            const option = document.createElement('option');
+            option.value = user.userID;
+            option.textContent = `${user.name} (${user.userID})`;
+            userSelect.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function borrowBook() {
+      const bookID = document.getElementById('bookIDBorrow').value;
+      const userID = document.getElementById('userIDBorrow').value;
+
+      fetch(`${apiUrl}?action=borrowBook&bookIDBorrow=${bookID}&userIDBorrow=${userID}`, { method: 'GET' })
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+<a href="ahs.html"><button style="position: absolute; left: 0; height:200px; width:500px"><h1>Return to Main Website</h1></button></a>
+</body>
+</html>
